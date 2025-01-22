@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizzes - Synaptix</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">Synaptix</a>
+            <nav>
+                <ul>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="library.html">Digital Library</a></li>
+                    <li><a href="ai-helper.html">AI Helper</a></li>
+                    <li><a href="quizzes.html">Quizzes</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="parents-portal.html">Parents Portal</a></li>
+                    </ul></nav>
+            <div class="auth-buttons">
+                <span class="username-display" id="usernameDisplay"></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="quizzes">
+            <div class="container">
+                <h1>Quizzes</h1>
+                <div id="quizSetup">
+                    <h2>Select Quiz Parameters</h2>
+                    <div class="quiz-params">
+                        <div>
+                            <label for="gradeSelect">Grade:</label>
+                            <select id="gradeSelect">
+                                <option value="">Select Grade</option>
+                                <option value="3">Grade 3</option>
+                                <option value="4">Grade 4</option>
+                                <option value="5">Grade 5</option>
+                                <option value="6">Grade 6</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="subjectSelect">Subject:</label>
+                            <select id="subjectSelect">
+                                <option value="">Select Subject</option>
+                                <option value="Math">Math</option>
+                                <option value="Science">Science</option>
+                                <option value="Religious Studies">Religious Studies</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button id="startQuizBtn" disabled>Start Quiz</button>
+                </div>
+                <div id="quizContent" style="display: none;">
+                    <h2 id="questionText"></h2>
+                    <div id="answerOptions"></div>
+                    <button id="submitAnswerBtn">Submit Answer</button>
+                    <div id="explanation" style="display: none;"></div>
+                    <button id="nextQuestionBtn" style="display: none;">Next Question</button>
+                </div>
+                <div id="quizResults" style="display: none;">
+                    <h2>Quiz Completed</h2>
+                    <p>Your score: <span id="score"></span></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Synaptix. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="authTitle"></h2>
+            <form id="authForm">
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" required>
+                <button type="submit" id="authSubmit"></button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="quizzes.js"></script>
+</body>
+</html>
+

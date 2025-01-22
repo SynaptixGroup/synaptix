@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Library - Synaptix</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">Synaptix</a>
+            <nav>
+                <ul>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="library.html">Digital Library</a></li>
+                    <li><a href="ai-helper.html">AI Helper</a></li>
+                    <li><a href="quizzes.html">Quizzes</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="parents-portal.html">Parents Portal</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <span class="username-display" id="usernameDisplay"></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="library">
+            <div class="container">
+                <h1>Digital Library</h1>
+                <div class="library-filters">
+                    <select id="categoryFilter">
+                        <option value="all">All Categories</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="Educational">Educational</option>
+                    </select>
+                    <select id="ageGroupFilter">
+                        <option value="all">All Age Groups</option>
+                        <option value="3-6">3-6</option>
+                        <option value="7-9">7-9</option>
+                        <option value="10-12">10-12</option>
+                        <option value="13-15">13-15</option>
+                        <option value="16+">16+</option>
+                    </select>
+                </div>
+                <div class="book-grid" id="bookGrid">
+                    <!-- Books will be dynamically added here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Synaptix. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="authTitle"></h2>
+            <form id="authForm">
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" required>
+                <button type="submit" id="authSubmit"></button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="library.js"></script>
+</body>
+</html>
+

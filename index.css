@@ -1,0 +1,212 @@
+/* Homepage specific styles */
+.hero {
+    background-color: #f3f4f6;
+    padding: 4rem 0;
+}
+
+.hero-content {
+    max-width: 600px;
+    margin-bottom: 2rem;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    color: #1f2937;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: #4b5563;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #3b82f6;
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.375rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #2563eb;
+}
+
+.hero-image img {
+    margin-left: 750px;
+    max-width: 100%;
+    height: 300px;
+    border-radius: 50% 10% 50% 10%;
+    margin-top: -330px;
+}
+
+.stats {
+    background-color: #ffffff;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.stats-grid {
+    display: flex;
+    justify-content: space-around; /* Align items with space between */
+    align-items: center;
+    gap: 2rem; /* Add spacing between items */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.stat-item {
+    text-align: center;
+    flex: 1; /* Allow flexible sizing */
+    min-width: 150px; /* Prevent items from becoming too small */
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #3b82f6;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 1rem;
+    color: #4b5563;
+}
+
+.features {
+    color: #3b82f6;
+    background-color: #f3f4f6;
+    padding: 4rem 0;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    font-size: 1.25rem;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+    font-size: 1rem;
+    color: #4b5563;
+}
+
+.impact {
+    color: #3b82f6;
+    background-color: #ffffff;
+    padding: 4rem 0;
+}
+
+.impact-content {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.impact-image img {
+    max-width: 100%;
+    height: 300px;
+    border-radius: 0.5rem;
+}
+
+.impact-text {
+    flex: 1;
+}
+
+.impact-text h2 {
+    font-size: 2rem;
+    color: #3b82f6;
+    margin-bottom: 1rem;
+}
+
+.impact-text p {
+    font-size: 1rem;
+    color: #4b5563;
+    margin-bottom: 1rem;
+}
+
+.impact-text ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.impact-text li {
+    margin-bottom: 1rem;
+}
+
+.impact-text li strong {
+    display: block;
+    font-size: 1.125rem;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .hero-content {
+        text-align: center;
+    }
+
+    .impact-content {
+        flex-direction: column;
+    }
+
+    .stats-grid {
+        flex-direction: column; /* Stack the stats vertically on smaller screens */
+    }
+}
+
+/* Carousel container */
+.carousel {
+    position: absolute; /* Allows overlapping */
+    top: 40%; /* Moves the carousel higher to cover more of the text */
+    left: 0;
+    width: 100%; /* Full width */
+    height: 400px; /* Increased height for more coverage */
+    overflow: hidden; /* Prevent extra images from showing */
+    z-index: -1; /* Ensures it's behind the text */
+}
+
+/* Carousel track */
+.carousel-track {
+    display: flex;
+    animation: scroll 20s linear infinite; /* Infinite sliding */
+}
+
+/* Carousel images */
+.carousel img {
+    transform: translateY(-100px);
+    width: 100%;
+    height: 600px; /* Stretch the image to fill the carousel height */
+    object-fit: cover; /* Ensures the image fills the space while maintaining proportions */
+    filter: brightness(0.4); /* Slightly darken images for better text contrast */
+}
+
+/* Animation for continuous sliding */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}

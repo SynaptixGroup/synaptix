@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synaptix - Education for Everyone</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div id="welcomePopup" class="welcome-popup">
+        <h2>Welcome to Synaptix!</h2>
+        <p>Please enter your name to continue:</p>
+        <input type="text" id="nameInput" placeholder="Your name" required maxlength="15">
+        <button id="submitName">Continue</button>
+    </div>
+    <img src="synaptixguy.png" alt="Synaptix Character" class="welcome-character" id="welcomeCharacter">
+    <div class="chat-bubble">
+        <p id="chatText"></p>
+    </div>
+    <div class="content-wrapper">
+        <header>
+            <div class="container">
+                <a href="index.html" class="logo">Synaptix</a>
+                <nav>
+                    <ul>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="library.html">Digital Library</a></li>
+                        <li><a href="ai-helper.html">AI Helper</a></li>
+                        <li><a href="quizzes.html">Quizzes</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="parents-portal.html">Parents Portal</a></li>
+                    </ul>
+                </nav>
+                <div class="auth-buttons">
+                    <span class="username-display" id="usernameDisplay"></span>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="container">
+                    <div class="hero-content">
+                        <h1>Education is a Right, Not a Privilege</h1>
+                        <p>Join our mission to make quality education accessible to everyone, regardless of their economic background.</p>
+                        <a href="courses.html" class="cta-button">Get Started</a>
+                    </div>
+                    <div class="hero-image">
+                        <img src="Oxford calss 1.jpeg" alt="Students learning">
+                    </div>
+                </div>
+            </section>
+
+        <section class="stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">10K+</div>
+                        <div class="stat-label">Active Students</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Free Courses</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">95%</div>
+                        <div class="stat-label">Success Rate</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">AI Support</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <h2>Why Choose Synaptix?</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-book"></i></div>
+                        <h3>Digital Library</h3>
+                        <p>Access thousands of educational resources anytime, anywhere.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-robot"></i></div>
+                        <h3>AI Helper</h3>
+                        <p>Get instant help with your science and research questions.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-tasks"></i></div>
+                        <h3>Interactive Quizzes</h3>
+                        <p>Test your knowledge with our adaptive learning system.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-users"></i></div>
+                        <h3>Community Support</h3>
+                        <p>Learn together with students from around the world.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="impact">
+            <div class="container">
+                <h2>Making Education Accessible</h2>
+                <div class="impact-content">
+                    <div class="impact-image">
+                        <img src="education impact.jpeg" alt="Education impact">
+                    </div>
+                    <div class="impact-text">
+                        <p>Education is a fundamental human right, yet millions around the world lack access to quality learning resources. At Synaptix, we're committed to breaking down barriers to education through:</p>
+                        <ul>
+                            <li>
+                                <strong>Free Resources</strong>
+                                <p>Providing free access to quality educational materials for underprivileged communities.</p>
+                            </li>
+                            <li>
+                                <strong>Digital Library</strong>
+                                <p>Providing students with lots of eBooks for all ages.</p>
+                            </li>
+                            <li>
+                                <strong>Community Outreach</strong>
+                                <p>Working with local communities to bring education to remote areas.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Synaptix. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="authTitle"></h2>
+            <form id="authForm">
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" required>
+                <button type="submit" id="authSubmit"></button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

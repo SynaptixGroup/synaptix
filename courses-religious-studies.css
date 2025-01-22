@@ -1,0 +1,35 @@
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.course-card {
+    background-color: #fdf2f8;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.course-card h2 {
+    color: #9d174d;
+    margin-bottom: 1rem;
+}
+
+.course-card ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.course-card li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.course-card li::before {
+    content: '🕯️';
+    position: absolute;
+    left: 0;
+}
+

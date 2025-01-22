@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parents Portal - Synaptix</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">Synaptix</a>
+            <nav>
+                <ul>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="library.html">Digital Library</a></li>
+                    <li><a href="ai-helper.html">AI Helper</a></li>
+                    <li><a href="quizzes.html">Quizzes</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="parents-portal.html">Parents Portal</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <span class="username-display" id="usernameDisplay"></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1>Parents Portal</h1>
+            <div class="parents-portal">
+                <h2>Tips for Treating Your Children</h2>
+                <ul>
+                    <li>Practice positive reinforcement</li>
+                    <li>Set clear and consistent boundaries</li>
+                    <li>Encourage open communication</li>
+                    <li>Show empathy and understanding</li>
+                    <li>Spend quality time together</li>
+                </ul>
+
+                <div class="decision-game">
+                    <h3>Decision Game: How Would You Respond?</h3>
+                    <p>Your child refuses to do their homework. What do you do?</p>
+                    <button onclick="evaluateDecision('force')">Force them to do it</button>
+                    <button onclick="evaluateDecision('understand')">Try to understand why</button>
+                    <button onclick="evaluateDecision('consequence')">Explain the consequences</button>
+                    <p id="decisionFeedback"></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Synaptix. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="parents-portal.js"></script>
+</body>
+</html>
+

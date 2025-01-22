@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Synaptix</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">Synaptix</a>
+            <nav>
+                <ul>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="library.html">Digital Library</a></li>
+                    <li><a href="ai-helper.html">AI Helper</a></li>
+                    <li><a href="quizzes.html">Quizzes</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="parents-portal.html">Parents Portal</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <span class="username-display" id="usernameDisplay"></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="about">
+            <div class="container">
+                <h1>Our Story</h1>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>
+                            Synaptix started with a simple yet powerful idea: everyone deserves access to quality education. Founded in
+                            2024 by a group of educators and technologists In Al-Hoda schools, we set out to create a platform that would break down the
+                            barriers to learning.
+                        </p>
+                        <p>
+                            Our journey began when we witnessed firsthand how limited access to education was affecting communities
+                            around the world. We realized that with today's technology, we could create a solution that would make
+                            learning accessible to anyone with an internet connection.
+                        </p>
+                        <p>
+                            Today, Synaptix serves thousands of students worldwide, providing free and low-cost educational resources,
+                            interactive courses, and personalized learning experiences through our AI-powered platform.
+                        </p>
+                    </div>
+                    <div class="about-image">
+                        <img src="Oxford class 2.jpeg" alt="Our team">
+                    </div>
+                </div>
+
+                <h2>Our Team</h2>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <img src="person 1.jpg" alt="Team member 1">
+                        <h3>Abdallah</h3>
+                        <p class="position">CEO</p>
+                        <p class="description">A grade 9 teenager, he likes math and technology.</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="placeholder.svg?height=200&width=200" alt="Team member 2">
+                        <h3>Belal</h3>
+                        <p class="position">CEO</p>
+                        <p class="description">A grade 9 teenager, he likes Gym, Math and technology.</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="placeholder.svg?height=200&width=200" alt="Team member 3">
+                        <h3>Fares</h3>
+                        <p class="position">CEO</p>
+                        <p class="description">A grade 9 teenager, he likes reading and education.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Synaptix. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="authTitle"></h2>
+            <form id="authForm">
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" required>
+                <button type="submit" id="authSubmit"></button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Courses - Synaptix</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="courses-math.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">Synaptix</a>
+            <nav>
+                <ul>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="library.html">Digital Library</a></li>
+                    <li><a href="ai-helper.html">AI Helper</a></li>
+                    <li><a href="quizzes.html">Quizzes</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <button id="loginBtn">Log in</button>
+                <button id="registerBtn">Register</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="courses">
+            <div class="container">
+                <h1>Math Courses</h1>
+                <div class="course-grid">
+                    <div class="course-card">
+                        <h2>Grade 3</h2>
+                        <ul>
+                            <li>Multiplication and Division</li>
+                            <li>Fractions</li>
+                            <li>Geometry Basics</li>
+                        </ul>
+                    </div>
+                    <div class="course-card">
+                        <h2>Grade 4</h2>
+                        <ul>
+                            <li>Multi-digit Arithmetic</li>
+                            <li>Decimals</li>
+                            <li>Data and Graphs</li>
+                        </ul>
+                    </div>
+                    <div class="course-card">
+                        <h2>Grade 5</h2>
+                        <ul>
+                            <li>Order of Operations</li>
+                            <li>Algebraic Thinking</li>
+                            <li>Volume and Area</li>
+                        </ul>
+                    </div>
+                    <div class="course-card">
+                        <h2>Grade 6</h2>
+                        <ul>
+                            <li>Ratios and Proportions</li>
+                            <li>Integers</li>
+                            <li>Statistical Thinking</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Synaptix. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="authTitle"></h2>
+            <form id="authForm">
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" required>
+                <button type="submit" id="authSubmit"></button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
