@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <h3>${book.title}</h3>
                 <p>Category: ${book.category}</p>
                 <p>Age Group: ${book.ageGroup}</p>
-                <button>Read Summary</button>
+                <button>Not available now</button>
             `;
             bookGrid.appendChild(bookCard);
         });
