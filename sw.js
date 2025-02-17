@@ -1,64 +1,86 @@
-const CACHE_NAME = 'synaptix-v1';
+// File: sw.js
+
+const CACHE_NAME = 'synaptix-v5';
 const urlsToCache = [
     '/',
     '/index.html',
+    '/courses.html',
+    '/grade.html',
+    '/pdf-viewer.html',
+    '/quizzes.html',
+    '/library.html',
+    '/ai-helper.html',
+    '/about.html',
     '/styles.css',
     '/script.js',
     '/courses.js',
-    '/courses.html',
-    '/library.html',
-    '/ai-helper.html',
-    '/quizzes.html',
-    '/about.html',
-    '/lesson.html',
-    '/lesson.js',
-    '/parents-portal.html',
-    '/grade-kg1.html',
-    '/grade-kg2.html',
-    '/grade-1.html',
-    '/grade-2.html',
-    '/grade-3.html',
-    '/grade-4.html',
-    '/grade-5.html',
-    '/grade-6.html',
-    '/subject-kg1-math.html',
-    '/subject-kg1-science.html',
-    '/subject-kg1-religious-studies.html',
-    // Add all other subject pages here
+    '/grade.js',
+    '/pdf-viewer.js',
     'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css',
-    '/presentations/',
-    '/placeholder.svg'
+    'quizzes.js',
+    '/placeholder.svg',
+    '/offline.html' // Ensure this file exists to handle offline mode
 ];
 
+// Install event: Cache files safely
 self.addEventListener('install', (event) => {
     event.waitUntil(
-        caches.open(CACHE_NAME)
-            .then((cache) => {
-                return cache.addAll(urlsToCache);
-            })
-    );
-});
-
-self.addEventListener('fetch', (event) => {
-    event.respondWith(
-        caches.match(event.request)
-            .then((response) => {
-                if (response) {
-                    return response;
+        caches.open(CACHE_NAME).then(async (cache) => {
+            for (const url of urlsToCache) {
+                try {
+                    await cache.add(url);
+                } catch (error) {
+                    console.warn(`Failed to cache ${url}:`, error);
                 }
-                return fetch(event.request)
-                    .then((response) => {
-                        if (!response || response.status !== 200 || response.type !== 'basic') {
-                            return response;
-                        }
-                        const responseToCache = response.clone();
-                        caches.open(CACHE_NAME)
-                            .then((cache) => {
-                                cache.put(event.request, responseToCache);
-                            });
-                        return response;
-                    });
-            })
+            }
+        })
     );
 });
 
+// Activate event: Remove old caches
+self.addEventListener('activate', (event) => {
+    event.waitUntil(
+        caches.keys().then((cacheNames) => {
+            return Promise.all(
+                cacheNames.map((cache) => {
+                    if (cache !== CACHE_NAME) {
+                        return caches.delete(cache);
+                    }
+                })
+            );
+        })
+    );
+});
+
+// Fetch event: Serve cached files or fetch and cache new ones
+self.addEventListener('fetch', (event) => {
+    const { request } = event;
+
+    // Bypass caching for external URLs
+    if (!request.url.startsWith(self.location.origin)) {
+        return;
+    }
+
+    event.respondWith(
+        caches.match(request).then((response) => {
+            return response || fetch(request)
+                .then((fetchResponse) => cacheResponse(request, fetchResponse))
+                .catch(() => {
+                    if (request.mode === 'navigate') {
+                        return caches.match('/offline.html'); // Offline fallback
+                    }
+                });
+        })
+    );
+});
+
+// Cache helper function
+async function cacheResponse(request, response) {
+    if (!response || response.status !== 200 || response.type !== 'basic') {
+        return response;
+    }
+    const responseToCache = response.clone();
+    const cache = await caches.open(CACHE_NAME);
+    cache.put(request, responseToCache);
+    return response;
+}
