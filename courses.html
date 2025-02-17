@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="icon" type="image/png" href="synaptixlogo.png">
-    <title>Quizzes - Synaptix</title>
+    <title>Courses - Synaptix</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -30,24 +30,8 @@
 
     <main>
         <div class="container">
-            <h1>Quizzes</h1>
-            
-            <!-- Dropdown Filters -->
-            <div class="filter-container">
-                <select id="gradeSelect">
-                    <option value="">Select Grade</option>
-                </select>
-                <select id="subjectSelect" disabled>
-                    <option value="">Select Subject</option>
-                </select>
-            </div>
-
-            <div id="quizContainer" style="display: none;">
-                <h2 id="quizTitle"></h2>
-                <div id="questionContainer"></div>
-                <button id="submitQuiz" style="display: none;">Submit Quiz</button>
-                <div id="quizResults" style="display: none;"></div>
-            </div>
+            <h1>Our Courses</h1>
+            <div id="gradeButtons" class="button-grid"></div>
         </div>
     </main>
 
@@ -56,7 +40,21 @@
             <p>&copy; 2025 Synaptix. All rights reserved.</p>
         </div>
     </footer>
+
     <script src="script.js"></script>
-    <script src="quizzes.js"></script>
+    <script src="courses.js"></script>
+<script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/sw.js')
+                .then((registration) => {
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }, (err) => {
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+        });
+    }
+</script>
 </body>
 </html>
+
