@@ -1,74 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Courses - Synaptix</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" type="image/png" href="synaptixlogo.png">
+    <title>Courses - Synaptix</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-  <header>
-      <div class="container">
-          <a href="index.html" class="logo">Synaptix</a>
-          <nav>
-              <ul>
-                  <li><a href="courses.html">Courses</a></li>
-                  <li><a href="library.html">Digital Library</a></li>
-                  <li><a href="ai-helper.html">AI Helper</a></li>
-                  <li><a href="quizzes.html">Quizzes</a></li>
-                  <li><a href="about.html">About Us</a></li>
-                  <li><a href="parents-portal.html">Parents Portal</a></li>
-              </ul>
-          </nav>
-          <div class="auth-buttons">
-            <span class="username-display" id="usernameDisplay"></span>
-          </div>
-      </div>
-  </header>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">Synaptix</a>
+            <nav>
+                <ul>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="library.html">Digital Library</a></li>
+                    <li><a href="ai-helper.html">AI Helper</a></li>
+                    <li><a href="quizzes.html">Quizzes</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="parents-portal.html">Parents portal</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <span class="username-display" id="usernameDisplay"></span>
+            </div>
+        </div>
+    </header>
 
-  <main>
-      <div class="container">
-          <h1>Our Courses</h1>
-          <div class="grade-buttons" id="gradeButtons"></div>
-      </div>
-  </main>
+    <main>
+        <div class="container">
+            <h1>Our Courses</h1>
+            <div id="gradeButtons" class="button-grid"></div>
+        </div>
+    </main>
 
-  <footer>
-      <div class="container">
-          <p>&copy; 2025 Synaptix. All rights reserved.</p>
-      </div>
-  </footer>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Synaptix. All rights reserved.</p>
+        </div>
+    </footer>
 
-  <div id="authModal" class="modal">
-      <div class="modal-content">
-          <span class="close">&times;</span>
-          <h2 id="authTitle"></h2>
-          <form id="authForm">
-              <label for="email">Email:</label>
-              <input type="email" id="email" required>
-              <label for="password">Password:</label>
-              <input type="password" id="password" required>
-              <button type="submit" id="authSubmit"></button>
-          </form>
-      </div>
-  </div>
-
-  <script src="script.js"></script>
-  <script src="courses.js"></script>
-  <script>
-      if ('serviceWorker' in navigator) {
-          window.addEventListener('load', () => {
-              navigator.serviceWorker.register('/sw.js')
-                  .then((registration) => {
-                      console.log('ServiceWorker registration successful');
-                  })
-                  .catch((err) => {
-                      console.log('ServiceWorker registration failed: ', err);
-                  });
-          });
-      }
-  </script>
+    <script src="script.js"></script>
+    <script src="courses.js"></script>
+<script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/sw.js')
+                .then((registration) => {
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }, (err) => {
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+        });
+    }
+</script>
 </body>
 </html>
 
