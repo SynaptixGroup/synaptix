@@ -58,11 +58,11 @@
             <div class="container">
                 <div class="stats-grid">
                     <div class="stat-item">
-                        <div class="stat-number">10K+</div>
+                        <div class="stat-number">100+</div>
                         <div class="stat-label">Active Students</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">500+</div>
+                        <div class="stat-number">15+</div>
                         <div class="stat-label">Free Courses</div>
                     </div>
                     <div class="stat-item">
@@ -155,6 +155,18 @@
     </div>
 
     <script src="script.js"></script>
+<script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/sw.js')
+                .then((registration) => {
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }, (err) => {
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+        });
+    }
+</script>
 </body>
 </html>
 
