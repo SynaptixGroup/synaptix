@@ -3055,5 +3055,130 @@ html {
     z-index: 1000;
     animation: bubblePopUp 0.5s ease 0.8s forwards;
 }
+/* Existing styles... */
 
-  
+/* Course page styles */
+.grade-buttons,
+.subject-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.grade-button,
+.subject-button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.grade-button:hover,
+.subject-button:hover {
+  background-color: var(--primary-dark);
+}
+
+#pdfViewer {
+  margin-top: 2rem;
+}
+
+#pdfEmbed {
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+}
+
+@media (max-width: 768px) {
+  .grade-button,
+  .subject-button {
+    width: calc(50% - 0.5rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .grade-button,
+  .subject-button {
+    width: 100%;
+  }
+}
+
+/* Existing styles... */
+
+/* Existing styles... */
+
+.pdf-container {
+    margin-top: 2rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+}
+
+/* Existing styles... */
+  /* Existing styles... */
+
+.question {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: #f0f0f0;
+    border-radius: 0.5rem;
+}
+
+.question p {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.question label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+#submitQuiz {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#submitQuiz:hover {
+    background-color: var(--primary-dark);
+}
+
+#quizResults {
+    margin-top: 1rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Existing styles... */
+/* Style the filter dropdowns to match the image */
+.filter-container {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.filter-container select {
+    font-size: 16px; /* Adjust font size */
+    padding: 8px; /* Make it similar to the image */
+    width: 180px; /* Adjust width */
+    border-radius: 5px; /* Rounded corners */
+    border: 1px solid #ccc; /* Light gray border */
+    background-color: white;
+    cursor: pointer;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+/* Hover effect */
+.filter-container select:hover {
+    border-color: #888;
+}
+
