@@ -1,6 +1,4 @@
-// File: sw.js
-
-const CACHE_NAME = 'synaptix-v5';
+const CACHE_NAME = 'synaptix-v6';
 const urlsToCache = [
     '/',
     '/index.html',
@@ -16,23 +14,20 @@ const urlsToCache = [
     '/courses.js',
     '/grade.js',
     '/pdf-viewer.js',
-    'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css',
     'quizzes.js',
     '/placeholder.svg',
-    '/offline.html' // Ensure this file exists to handle offline mode
+    '/offline.html'
 ];
 
 // Install event: Cache files safely
 self.addEventListener('install', (event) => {
     event.waitUntil(
-        caches.open(CACHE_NAME).then(async (cache) => {
-            for (const url of urlsToCache) {
-                try {
-                    await cache.add(url);
-                } catch (error) {
-                    console.warn(`Failed to cache ${url}:`, error);
-                }
-            }
+        caches.open(CACHE_NAME).then((cache) => {
+            return Promise.all(
+                urlsToCache.map((url) => 
+                    cache.add(url).catch((error) => console.warn(`Failed to cache ${url}:`, error))
+                )
+            );
         })
     );
 });
@@ -56,7 +51,7 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
     const { request } = event;
 
-    // Bypass caching for external URLs
+    // Ignore external requests (like fonts, APIs)
     if (!request.url.startsWith(self.location.origin)) {
         return;
     }
