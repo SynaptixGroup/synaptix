@@ -2,9 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" type="image/png" href="synaptixlogo.png">
     <title>Quizzes - Synaptix</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header>
@@ -17,8 +19,9 @@
                     <li><a href="ai-helper.html">AI Helper</a></li>
                     <li><a href="quizzes.html">Quizzes</a></li>
                     <li><a href="about.html">About Us</a></li>
-                    <li><a href="parents-portal.html">Parents Portal</a></li>
-                    </ul></nav>
+                    <li><a href="parents-portal.html">Parents portal</a></li>
+                </ul>
+            </nav>
             <div class="auth-buttons">
                 <span class="username-display" id="usernameDisplay"></span>
             </div>
@@ -26,71 +29,34 @@
     </header>
 
     <main>
-        <section class="quizzes">
-            <div class="container">
-                <h1>Quizzes</h1>
-                <div id="quizSetup">
-                    <h2>Select Quiz Parameters</h2>
-                    <div class="quiz-params">
-                        <div>
-                            <label for="gradeSelect">Grade:</label>
-                            <select id="gradeSelect">
-                                <option value="">Select Grade</option>
-                                <option value="3">Grade 3</option>
-                                <option value="4">Grade 4</option>
-                                <option value="5">Grade 5</option>
-                                <option value="6">Grade 6</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label for="subjectSelect">Subject:</label>
-                            <select id="subjectSelect">
-                                <option value="">Select Subject</option>
-                                <option value="Math">Math</option>
-                                <option value="Science">Science</option>
-                                <option value="Religious Studies">Religious Studies</option>
-                            </select>
-                        </div>
-                    </div>
-                    <button id="startQuizBtn" disabled>Start Quiz</button>
-                </div>
-                <div id="quizContent" style="display: none;">
-                    <h2 id="questionText"></h2>
-                    <div id="answerOptions"></div>
-                    <button id="submitAnswerBtn">Submit Answer</button>
-                    <div id="explanation" style="display: none;"></div>
-                    <button id="nextQuestionBtn" style="display: none;">Next Question</button>
-                </div>
-                <div id="quizResults" style="display: none;">
-                    <h2>Quiz Completed</h2>
-                    <p>Your score: <span id="score"></span></p>
-                </div>
+        <div class="container">
+            <h1>Quizzes</h1>
+            
+            <!-- Dropdown Filters -->
+            <div class="filter-container">
+                <select id="gradeSelect">
+                    <option value="">Select Grade</option>
+                </select>
+                <select id="subjectSelect" disabled>
+                    <option value="">Select Subject</option>
+                </select>
             </div>
-        </section>
+
+            <div id="quizContainer" style="display: none;">
+                <h2 id="quizTitle"></h2>
+                <div id="questionContainer"></div>
+                <button id="submitQuiz" style="display: none;">Submit Quiz</button>
+                <div id="quizResults" style="display: none;"></div>
+            </div>
+        </div>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Synaptix. All rights reserved.</p>
+            <p>&copy; 2025 Synaptix. All rights reserved.</p>
         </div>
     </footer>
-
-    <div id="authModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2 id="authTitle"></h2>
-            <form id="authForm">
-                <label for="email">Email:</label>
-                <input type="email" id="email" required>
-                <label for="password">Password:</label>
-                <input type="password" id="password" required>
-                <button type="submit" id="authSubmit"></button>
-            </form>
-        </div>
-    </div>
-
     <script src="script.js"></script>
     <script src="quizzes.js"></script>
 </body>
 </html>
-
